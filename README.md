@@ -20,20 +20,69 @@ go test -v ./$DIR/...
 
 <table>
   <tr>
-    <th>
+    <th rowspan="2">
       Problem Name
     </th>
-    <th>
+    <th rowspan="2">
       Problem Description
     </th>
-    <th>
+    <th colspan="3">
       First Solution Benchmarks
     </th>
-    <th>
+    <th colspan="3">
       Revision Benchmarks
     </th>
-    <th>
+    <th rowspan="2">
       Comments
     </th>
+  </tr>
+  <tr>
+    <th>
+      ns/op
+    </th>
+    <th>
+      B/op
+    </th>
+    <th>
+      allocs/op
+    </th>
+    <th>
+      ns/op
+    </th>
+    <th>
+      B/op
+    </th>
+    <th>
+      allocs/op
+    </th>
+  </tr>
+  <tr>
+    <td>
+      Is Unique
+    </td>
+    <td>
+      Implement an algorithm to determine if a string has all unique characters.
+    </td>
+    <td>
+      397.5
+    </td>
+    <td>
+      96
+    </td>
+    <td>
+      1
+    </td>
+    <td>
+      N/A
+    </td>
+    <td>
+      N/A
+    </td>
+    <td>
+      N/A
+    </td>
+    <td>
+      My solution was so close to the book solution that I didn't bother revising.
+    </td>
   </tr>
 </table>
