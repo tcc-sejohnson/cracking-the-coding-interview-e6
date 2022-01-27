@@ -69,4 +69,24 @@ go test -v ./$DIR/...
     <td><p>The benchmarks on this one are a bit misleading -- run the full package benchmarks to see the full story. My original solution was to sort both strings and compare them, exiting early if a rune comparison failed. In the best case (strings of unequal length), this runs in O(1) time. In the normal case, it bottlenecks at the sort step with O(log(N)) time, since both sorts have to run before starting comparison.</p>
     <p>The revised solution uses a rune-int map to count the character occurrences of the first string and compare them to the character occurrences of the second string, exiting early if there are any differences. With small strings, this performs worse. However, with larger strings, it begins to shine: As with the first solution, with strings of unequal length, it runs in O(1). With equal-length strings, it runs in O(N) time, where N is the length of both strings.</p></td>
   </tr>
+  <tr>
+    <td>Urlify</td>
+    <td>
+      <p>Write a method to replace all spaces in a string with '%20'. You may assume that the given string has sufficient space at the end to hold the additional characters, and that you are given the "true" length of the string.</p>
+      <pre>
+        EXAMPLE<nbsp>
+        Input:   "Mr John Smith    "
+        Output:  "Mr%20John%20Smith"
+      </pre>
+    </td>
+    <td>116.6</td>
+    <td>48</td>
+    <td>2</td>
+    <td>105.5</td>
+    <td>0</td>
+    <td>0</td>
+    <td>
+      <p>This is one of those cases where I would really advocate for the less-efficient but much more readable algorithm. Using <code>strings.Replace</code> and <code>strings.Trim</code> on the input is two lines and is really fast. That's how it's done in the "clean" version. The "clever" version, using no libraries, avoids allocations by using a rune array and looking backwards through the string. It's so eerily close to the solution the book proposes, I'm not writing a "revised" version.</p>
+    </td>
+  </tr>
 </table>
